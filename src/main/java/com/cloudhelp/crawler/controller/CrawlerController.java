@@ -36,7 +36,7 @@ public class CrawlerController {
         
         // Simple response for now - in real implementation, this would perform actual crawling
         Map<String, Object> response = new HashMap<>();
-        response.put("message", "Crawl request received");
+        response.put("message", "Crawl request received..");
         response.put("url", url);
         response.put("status", "PROCESSING");
         response.put("timestamp", LocalDateTime.now());
