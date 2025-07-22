@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloudhelp-crawler1
+  profiles:
+    active: dev
+
+logging:
+  level:
+    com.cloudhelp.crawler: INFO
+    org.springframework: WARN
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+crawler:
+  config:
+    max-concurrent-requests: 10
+    timeout-seconds: 30
+    retry-attempts: 3 
